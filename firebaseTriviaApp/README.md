@@ -1,5 +1,7 @@
 # Trivia
 
+### Project is deployed on firebaseapp.com: [trivia-43e20](https://trivia-43e20.firebaseapp.com)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.5.
 
 ## Development server
