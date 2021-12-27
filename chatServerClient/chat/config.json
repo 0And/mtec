@@ -1,0 +1,6 @@
+{
+	"port": 5000,
+	"address": "localhost",
+	"maxMessage": 150,
+	"maxUsername": 12
+}

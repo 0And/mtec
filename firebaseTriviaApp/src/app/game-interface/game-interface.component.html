@@ -1,0 +1,45 @@
+<mat-card [ngClass]="{'game-main-card': true, 'hide': count >= questions.length}">
+	<mat-card [ngClass]="{'user-card': true, 'hide': users.length <= 1}">
+		<mat-card-header>
+			<mat-card-title>
+				<img [src]="users.length > 0 ? (users[(count) % users.length]['photoURL'] ? users[(count) % users.length]['photoURL'] : defaultAvatarURL) : ''">
+				<span [innerHTML]="users.length > 0 ? (users[(count) % users.length]['displayName'] ? users[(count) % users.length]['displayName'] : users[(count) % users.length]['uid']) : ''"></span>
+			</mat-card-title>
+		</mat-card-header>
+	</mat-card>
+	<mat-card class="game-title-card">
+		<mat-card-header>
+			<mat-card-title>
+				<span [innerHTML]="currentQuestions['question']"></span>
+			</mat-card-title>
+		</mat-card-header>
+	</mat-card>
+	<mat-card-actions>
+		<button mat-button [disabled]="!selectable" *ngFor="let answer of currentQuestions['answers']; let i = index"
+		(click)="selectAnswer(i)" [id]="'answer' + i">
+			<span [innerHTML]="answer"></span>
+		</button>
+	</mat-card-actions>
+</mat-card>
+<mat-card class="progress-card">
+	<mat-card-title class="progress-title">{{ count }}/{{ questions.length }} Questions</mat-card-title>
+	<mat-slider min="0" max="{{questions.length}}" step="1" value="{{count}}" [disabled]="true"></mat-slider>
+	<mat-card [ngClass]="{'finalMessage': true, 'hide': count < questions.length || users.length <= 1}">
+		<mat-card-title>{{ finalWinner() }}</mat-card-title>
+  </mat-card>
+  <div>
+    <mat-card class="user-progress-card" *ngFor="let user of users; let i = index">
+      <mat-card-title class="user-progress-title">
+        {{ user['displayName'] ? user['displayName'] : user['uid'] }}
+        <span [className]="users.length > 1 ? (isWinning(i) === 'W' ? 'winning' : isWinning(i) === 'L' ? 'losing' : 'tie') : 'hide'" [innerHTML]="isWinning(i) === 'W' ? 'WINNING' : isWinning(i) === 'L' ? 'LOSING' : 'TIED'"></span>
+        <span class="info">{{score[i]}} CORRECT | {{wrong[i]}} WRONG</span>
+      </mat-card-title>
+      <mat-slider class="correct-slider" min="0" max="{{questions.length/users.length}}" step="1" value="{{score[i]}}" [disabled]="true"></mat-slider>
+      <mat-slider class="incorrect-slider" min="0" max="{{questions.length/users.length}}" step="1" value="{{wrong[i]}}" [disabled]="true"></mat-slider>
+    </mat-card>
+  </div>
+	<mat-card-actions [ngClass]="{'resultButtons': true, 'hide': count < questions.length}">
+		<button mat-raised-button routerLink="/set-up">Play Again</button>
+		<button mat-raised-button routerLink="/userStats">Open Stats</button>
+	</mat-card-actions>
+</mat-card>

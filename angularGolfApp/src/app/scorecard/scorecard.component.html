@@ -1,0 +1,67 @@
+<mat-card class="navbar">
+	<button mat-button (click)="exitGame()">Leave Game</button>
+	<div>
+		<h3>{{ name }} {{ tee }}</h3>
+		<h4>{{ firebaseCode }}</h4>
+	</div>
+</mat-card>
+<div class="scroller" id="mainscroller">
+	<div class="undershadow"><div></div></div>
+	<mat-card class="title">
+		<mat-list>
+			<mat-list-item class="big">Holes</mat-list-item>
+			<mat-list-item *ngFor="let n1 of [1,2,3,4,5,6,7,8,9]"> {{ n1 }} </mat-list-item>
+			<mat-list-item class="big">Out</mat-list-item>
+			<mat-list-item *ngFor="let n2 of [10,11,12,13,14,15,16,17,18]"> {{ n2 }} </mat-list-item>
+			<mat-list-item class="big">In</mat-list-item>
+			<mat-list-item class="big">Total</mat-list-item>
+		</mat-list>
+	</mat-card>
+	<mat-card class="plrs">
+		<mat-list *ngFor="let p of players">
+			<mat-list-item class="big" [ngStyle]="{'background-color': colors[p['color']]}">{{ p["name"] }}</mat-list-item>
+			<input value=0 [(ngModel)]="p['score'][i1]" [id]="p['name'].concat(i1)"
+				(ngModelChange)="checkInput(p['name'].concat(i1), $event)" *ngFor="let u1 of [0,0,0,0,0,0,0,0,0]; let i1 = index"
+				type="number" min=0 [ngClass]="{
+					'unfilled': p['score'][i1] <= 0
+			}"/>
+			<input class="big" type="number" [value]="addArray(p['score'].slice(0,9))" disabled/>
+			<input value=0 [(ngModel)]="p['score'][i2 + 9]" [id]="p['name'].concat(i2 + 9)"
+				(ngModelChange)="checkInput(p['name'].concat(i2 + 9), $event)" *ngFor="let u2 of [0,0,0,0,0,0,0,0,0]; let i2 = index"
+				type="number" min=0 [ngClass]="{
+					'unfilled': p['score'][i2 + 9] <= 0
+			}"/>
+			<input class="big" type="number" [value]="addArray(p['score'].slice(9,18))" disabled/>
+			<input class="big" type="number" [value]="addArray(p['score'])" disabled/>
+			<div class="endgame" (click)="hideFinal(true)" *ngIf="isComplete(p['score']) && showFinal"><div [ngClass]="{'bad': addArray(par) < addArray(p['score'])}">
+				{{ addArray(par) < addArray(p['score']) ? 'Above Par' : 'Below Par' }}: {{ addArray(p['score']) - addArray(par) }} relative to par.
+			</div></div>
+		</mat-list>
+	</mat-card>
+	<mat-card class="info">
+		<mat-list *ngIf="par.length > 0">
+			<mat-list-item class="big">Par</mat-list-item>
+			<mat-list-item *ngFor="let par1 of par.slice(0,9)"> {{ par1 }} </mat-list-item>
+			<mat-list-item class="big"> {{ par | addArray: 0: 9 }} </mat-list-item>
+			<mat-list-item *ngFor="let par2 of par.slice(9,18)"> {{ par2 }} </mat-list-item>
+			<mat-list-item class="big"> {{ par | addArray: 9: 18 }} </mat-list-item>
+			<mat-list-item class="big"> {{ par | addArray }} </mat-list-item>
+		</mat-list>
+		<mat-list *ngIf="yards.length > 0">
+			<mat-list-item class="big">Yards</mat-list-item>
+			<mat-list-item *ngFor="let y1 of yards.slice(0,9)"> {{ y1 }} </mat-list-item>
+			<mat-list-item class="big"> {{ yards | addArray: 0: 9 }} </mat-list-item>
+			<mat-list-item *ngFor="let y2 of yards.slice(9,18)"> {{ y2 }} </mat-list-item>
+			<mat-list-item class="big"> {{ yards | addArray: 9: 18 }} </mat-list-item>
+			<mat-list-item class="big"> {{ yards | addArray }} </mat-list-item>
+		</mat-list>
+		<mat-list *ngIf="hcp.length > 0">
+			<mat-list-item class="big">HCP</mat-list-item>
+			<mat-list-item *ngFor="let h1 of hcp.slice(0,9)"> {{ h1 }} </mat-list-item>
+			<mat-list-item class="big"> {{ hcp | addArray: 0: 9 }} </mat-list-item>
+			<mat-list-item *ngFor="let h2 of hcp.slice(9,18)"> {{ h2 }} </mat-list-item>
+			<mat-list-item class="big"> {{ hcp | addArray: 9: 18 }} </mat-list-item>
+			<mat-list-item class="big"> {{ hcp | addArray }} </mat-list-item>
+		</mat-list>
+	</mat-card>
+</div>

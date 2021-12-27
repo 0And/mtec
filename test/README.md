@@ -1,2 +1,0 @@
-# mtec test
-readme file

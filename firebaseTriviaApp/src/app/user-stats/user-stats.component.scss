@@ -1,0 +1,74 @@
+mat-card {
+    margin: 20px;
+    width: 320px;
+}
+
+mat-card-content {
+  margin-top: 20px;
+}
+
+mat-expansion-panel {
+  margin: 20px 0;
+}
+
+.statRow {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+#spinner {
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+}
+
+img {
+  width: 80%;
+  max-width: 400px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+ul {
+  text-align: initial;
+  color: #000000;
+}
+
+div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+// #user {
+//   height: 384px;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   flex-direction: column;
+// }
+
+#info {
+  min-width: 400px;
+}
+
+#user {
+  height: 406px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media only screen and (max-width: 500px) {
+  #info {
+    min-width: 0px;
+    width: 100%;
+  }
+}

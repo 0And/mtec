@@ -1,0 +1,119 @@
+.starter-template {
+  padding: 40px 15px;
+  text-align: center;
+}
+
+.bd-placeholder-img {
+    font-size: 2.5rem;
+    text-anchor: middle;
+}
+
+.carousel img {
+    height: 400px;
+    object-fit: cover;
+}
+
+.row {
+  margin: 0 auto;
+  max-width: 80rem;
+}
+.row > div > div {
+  margin: 0 auto;
+  width: 14rem !important;
+}
+.card {
+  margin: 15px auto !important;
+}
+section {
+  padding: 40px;
+}
+
+footer.row {
+  color: #eee;
+  padding: 15px;
+  text-align: center;
+  max-width: 100%;
+}
+
+footer p {
+  margin: 0;
+}
+
+.multi-collapse {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.multi-collapse > button {
+  margin: 0 10px;
+}
+
+form {
+  margin: 0 auto;
+  max-width: 50rem;
+}
+
+.jumbotron {
+  margin: 0;
+}
+
+.list-group-item {
+  border-top: 1px solid rgba(0, 0, 0, 0.125) !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.125) !important;
+}
+
+.center-text {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.btn-group-content {
+  display: flex;
+  flex-direction: column;
+}
+
+
+/*
+COLORS
+*/
+
+section {
+  background-color: #F7F9F9;
+}
+
+.alt-bg {
+  background-color: rgb(233, 236, 236);
+}
+
+.bg-dark {
+  background-color: #363642 !important;
+}
+
+.btn-primary {
+  background-color: #3788C2;
+  border-color: #3788C2;
+}
+.btn-primary:hover, .btn-primary:active {
+  background-color:rgb(47, 118, 168) !important;
+  border-color: rgb(47, 118, 168) !important;
+}
+
+.jumbotron {
+  background-color: rgb(233, 236, 236);
+}
+
+.card > .card-header {
+  background-color: rgb(237, 240, 240);
+  color:  #3788C2;
+}
+
+.card > .collapse {
+  background-color: rgb(248, 250, 250);
+}
+
+.btn-link {
+  color: #3788C2;
+}
+.btn-link:hover, .btn-primary:active {
+  color:rgb(47, 118, 168) !important;
+}

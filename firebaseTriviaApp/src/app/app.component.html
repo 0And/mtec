@@ -1,0 +1,28 @@
+<mat-toolbar color="accent">
+  <mat-toolbar-row id="toolbar-row">
+    <h1 routerLink="/set-up">Trivia</h1>
+
+    <div id="routes" *ngIf="loggedIn">
+        <button routerLink="/set-up" mat-raised-button color="primary">Game Set Up</button>
+
+        <button mat-raised-button [matMenuTriggerFor]="menu" id="message">
+          <img id="avatar" [src]="userAvatarURL ? userAvatarURL : defaultAvatarURL"/>
+          {{ firstName }}
+          <mat-icon>arrow_drop_down</mat-icon>
+        </button>
+        
+        <mat-menu #menu="matMenu" class="mat-toolbar mat-warn">
+          <button mat-menu-item routerLink="/userStats">
+            Profile
+            <mat-icon>person</mat-icon>
+          </button>
+          <button mat-menu-item (click)="logout()">
+            Logout
+            <mat-icon>exit_to_app</mat-icon>
+          </button>
+        </mat-menu>
+      </div>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<router-outlet></router-outlet>

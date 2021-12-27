@@ -1,0 +1,199 @@
+* { 
+  box-sizing: border-box;
+}
+
+mat-card-header, mat-card-actions {
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+}
+mat-card, mat-card-actions {
+	// background-color: #888;
+	margin: 10px;
+}
+
+// ----------------------
+// ----------------------
+// ----------------------
+::ng-deep .mat-slider-track-fill, ::ng-deep .mat-slider-thumb {
+	background-color: #4ec5c1 !important;
+}
+::ng-deep .mat-slider-track-background {
+	background-color: #fff !important;
+}
+::ng-deep .mat-slider.mat-slider-horizontal .mat-slider-track-wrapper {
+	height: 8px;
+	border-radius: 8px;
+}
+::ng-deep .mat-slider.mat-slider-horizontal .mat-slider-track-background,
+::ng-deep .mat-slider.mat-slider-horizontal .mat-slider-track-fill {
+	height: 100%;
+}
+::ng-deep .mat-accent .mat-slider-thumb {
+	height: 40px;
+	width: 40px;
+	background-color: #4ec5c1;
+	border: solid 2px #422781;
+	border-color: #422781 !important;
+	bottom: -23px;
+	right: -20px;
+}
+.progress-card mat-slider {
+	min-width: 100%;
+}
+.progress-title {
+	margin: 0;
+	margin-bottom: -10px;
+	margin-left: 10px;
+}
+// ----------------------
+// ----------------------
+// ----------------------
+
+.user-progress-card {
+	padding: 30px;
+}
+.user-progress-card, .user-progress-card .mat-card-title {
+	background-color: #fff;
+	color: #252525;
+	font-size: 18px;
+}
+::ng-deep .user-progress-card .mat-slider-track-background {
+	background-color: #ddd !important;
+}
+::ng-deep .user-progress-card .mat-slider.mat-slider-horizontal .mat-slider-track-wrapper {
+	height: 4px;
+	border-radius: 4px;
+}
+::ng-deep .user-progress-card .mat-accent .mat-slider-thumb {
+	height: 30px;
+	width: 30px;
+	border: solid 2px #fff;
+	border-color: #fff !important;
+	bottom: -16px;
+	right: -15px;
+}
+::ng-deep .user-progress-card .correct-slider .mat-slider-thumb, ::ng-deep .user-progress-card .correct-slider .mat-slider-track-fill {
+	background-color: #49a549 !important;
+}
+::ng-deep .user-progress-card .incorrect-slider .mat-slider-thumb, ::ng-deep .user-progress-card .incorrect-slider .mat-slider-track-fill {
+	background-color: #ec576b !important;
+}
+::ng-deep .user-progress-card .mat-slider-horizontal {
+	height: 0;
+	padding: 0;
+}
+::ng-deep .user-progress-card .mat-slider-horizontal .mat-slider-wrapper {
+	top: 0;
+}
+
+span.tie {
+	font-size: 14px;
+	color: #aaa;
+	margin-left: 10px;
+}
+span.winning {
+	font-size: 14px;
+	color: #49a549;
+	margin-left: 10px;
+}
+span.losing {
+	font-size: 14px;
+	color: #ec576b;
+	margin-left: 10px;
+}
+span.info {
+	font-size: 12px;
+	color: #aaa;
+	margin-left: 10px;
+}
+
+.hide {
+	display: none !important;
+}
+
+// ----------------------
+// ----------------------
+// ----------------------
+
+.resultButtons {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+.resultButtons button:last-child {
+	background-color: #fff !important;
+	color: #252525;
+	// padding: 10px 10px;
+}
+.resultButtons button:first-child {
+	background-color: #49a549 !important;
+	color: #fff !important;
+	// padding: 10px 30px;
+}
+.finalMessage {
+	background-color: #49a549;
+	color: #fff;
+	text-align: center;
+}
+
+.user-card {
+	background-color: #ec576b;
+	color: #fff;
+	padding: 20px;
+}
+.user-card mat-card-title {
+	margin: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.user-card img {
+	border-radius: 10px;
+	height: 50px;
+	margin-right: 10px;
+}
+
+.game-title-card {
+	background-color: #4ec5c1;
+	color: #252525;
+	margin-bottom: 30px;
+}
+
+button:hover {
+	opacity: .8;
+}
+button, button:disabled {
+	background-color: #e5e337 !important;
+	color: #252525 !important;
+	margin: 3px !important;
+	opacity: 1;
+}
+button.incorrect:disabled {
+	background-color: #ec576b !important;
+	color: #fff !important;
+	transition: background-color 0.05s;
+	transition: color 0.2s;
+}
+button.correct:disabled {
+	background-color: #49a549 !important;
+	color: #fff !important;
+	transition: background-color 0.05s;
+	transition: color 0.2s;
+}
+
+div {
+  display: flex;
+  align-items: center;
+}
+
+div mat-card {
+  width: 100%;
+}
+
+@media screen and (max-width: 1350px) {
+	div {
+    flex-direction: column;
+  }
+}

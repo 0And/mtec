@@ -1,0 +1,28 @@
+form {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+}
+
+mat-card {
+  margin: 20px;
+}
+
+button {
+  width: fit-content;
+}
+
+#spinner {
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+}
+
+#button-container {
+  display: flex;
+  justify-content: center;
+}
+
+#game-set-up {
+  max-width: 600px;
+}

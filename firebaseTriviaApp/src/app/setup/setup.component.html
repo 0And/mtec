@@ -1,0 +1,78 @@
+<mat-card *ngIf="categories" id="game-set-up">
+    <mat-card-title>Game Set Up</mat-card-title>
+    <mat-card-content>
+        <form (ngSubmit)="submitForm()" [formGroup]="setUpForm"> 
+            <mat-form-field>
+                <mat-label>Amount of Players:</mat-label>
+                <select matNativeControl formControlName="amount" (change)="chooseUser()">
+                    <option [value]=player  *ngFor="let player of playerAmount">{{player}}</option>
+                </select>
+                
+            </mat-form-field>
+
+            <mat-form-field>
+                <!-- make sure it will divide correct between players -->
+                <mat-label>Number of Questions:</mat-label>
+                <input 
+                  matInput 
+                  type="number"
+                  required 
+                  max="50"
+                  min="1"
+                  id="questionNum" 
+                  formControlName="questionNum"
+                >
+            </mat-form-field>
+                <div *ngIf="questionNum.invalid && (questionNum.dirty || questionNum.touched)">
+                    <mat-error *ngIf="questionNum.errors.max">
+                        50 is the maximum amount
+                    </mat-error>
+                    <mat-error *ngIf="questionNum.errors.min">
+                        Need at least one question to play
+                    </mat-error>
+                    <mat-error *ngIf="questionNum.errors.required">
+                        Number is required
+                    </mat-error>
+                </div>
+                <mat-error *ngIf="setUpForm.errors?.notDivisibleByPlayers && setUpForm.invalid">
+                    Please enter an amount so each player can have the same amount of questions
+                </mat-error>
+            
+            <mat-form-field>
+                <mat-label>Select Category:</mat-label>
+                <mat-select [(value)]="selected" formControlName="category">
+                    <mat-option value="any">Any Category</mat-option>
+                    <mat-option *ngFor="let category of categories" [value]="category.id">
+                      {{category.name}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Select Difficulty:</mat-label>
+                <select matNativeControl formControlName="difficulty">
+                    <option value="any">Any Difficulty</option>
+                    <option value="easy">Easy</option>
+                    <option value="medium">Medium</option>
+                    <option value="hard">Hard</option>
+                </select>
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Select Type:</mat-label>
+                <select matNativeControl formControlName="type">
+                    <option value="any">Any Type</option>
+                    <option value="boolean">True or False</option>
+                    <option value="multiple">Mutiple Choice</option>
+                </select>
+            </mat-form-field>
+            <div id="button-container">
+              <button mat-raised-button color="primary" type="submit" [disabled]="setUpForm.invalid">Let's Play!</button>
+            </div>
+        </form>
+    </mat-card-content>
+</mat-card>
+
+<div id="spinner">
+  <mat-spinner *ngIf="!categories"></mat-spinner>
+</div>

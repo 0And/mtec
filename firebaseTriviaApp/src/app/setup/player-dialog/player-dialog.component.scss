@@ -1,0 +1,40 @@
+mat-dialog-content {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+    justify-content: center;
+}
+
+mat-card {
+    width: 180px;
+    background-color: #35b0ab;
+    margin: 20px;
+    text-align: center;
+}
+
+mat-card-title {
+  font-size: 20px;
+}
+
+mat-card:hover {
+    cursor: pointer;
+}
+
+mat-card:active {
+    transform: translateY(4px) translateX(4px);
+}
+
+.disabled {
+    opacity: .3;
+    pointer-events: none;
+}
+
+.disabled:hover {
+    cursor: not-allowed;
+}
+
+.mat-card-avatar {
+    height: 80px;
+    width: 80px;
+    margin: 20px;
+}

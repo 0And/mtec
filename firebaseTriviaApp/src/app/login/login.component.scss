@@ -1,0 +1,60 @@
+span {
+  margin: 30px;
+}
+
+#google {
+  background-color: #DB4337;
+  color: #ffffff;
+  display: flex;
+  max-width: 225px;
+}
+
+#facebook {
+  background-color: #385899;
+  color: #ffffff;
+  display: flex;
+  max-width: 225px;
+}
+
+mat-card {
+  text-align: -webkit-center;
+  margin: 20px;
+  width: 300px;
+  height: auto;
+}
+
+button {
+  margin: 20px;
+}
+
+// #sign-up-content {
+//   margin: 110px 0 !important;
+// }
+
+#sign-in-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+// #sign-in-content {
+//   display: flex;
+//   flex-direction: column;
+// }
+
+#or {
+  font-size: 20px;
+}
+
+// @media only screen and (max-width: 800px) {
+//   #sign-in-container {
+//     flex-direction: column;
+//   }
+// }
+
+.active {
+  color: #ec576b;
+  border-bottom-color: #ec576b;
+  pointer-events: none;
+}

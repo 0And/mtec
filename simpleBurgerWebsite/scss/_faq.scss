@@ -1,0 +1,23 @@
+@import '_global';
+
+.faq-section {
+    margin-top: 10px;
+    > div {
+        background-color: $white;
+        color: black;
+        padding: 20px;
+        margin-top: -5px;
+        padding-top: 25px;
+    }
+    button {
+        width: 100%;
+        font-weight: normal;
+        background-color: $light-grey;
+        color: $black;
+        transition: background-color $transition-time;
+    }
+    button:hover {
+        //background-color: $hover-salmon;
+        transition: background-color $transition-time;
+    }
+}

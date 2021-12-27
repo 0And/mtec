@@ -1,0 +1,169 @@
+html, body {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    user-select: none;
+}
+
+.topbar button {
+    font-size: 1.4rem;
+    font-weight: 700;
+    border: none;
+    background-color: transparent;
+    color: #fff;
+    text-shadow: 0 0 1px #000;
+}
+.topbar {
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    background-color: #999;
+}
+.topbar .hamburger {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 80px;
+    width: 80px;
+    font-size: 30px;
+}
+.topbar .hamburger:hover {
+    cursor: pointer;
+}
+#courses, #tees {
+    position: absolute;
+    left: 0;
+    top: 80px;
+    height: 60px;
+    width: 100%;
+    display: none;
+    justify-content: center;
+    background-color: #888;
+    padding: 10px 0;
+}
+#tees {
+    top: 160px;
+}
+#courses button, #tees button {
+    font-size: 1.1rem;
+    border: none;
+    background-color: transparent;
+    color: #fff;
+    text-shadow: 0 0 1px #000;
+    padding: 10px;
+    margin: 0 10px;
+    font-weight: 500;
+    transition: background-color 0.1s;
+    border-radius: 3px;
+}
+#courses button:hover, #tees button:hover {
+    background-color: #777;
+    transition: background-color 0.1s;
+    cursor: pointer;
+}
+
+main {
+    height: calc(100% - 80px);
+    width: 100%;
+    background-color: #eee;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#scorecard {
+    display: flex;
+    width: calc(100% - 60px);
+    max-width: 1200px;
+    border-radius: 3px;
+    background-color: #fff;
+}
+#out, #in {
+    width: 50%;
+    overflow-x: auto;
+    margin: 10px;
+}
+
+h1, h2, h3, h5, h6, p {
+    margin: 0;
+    padding: 20px 0;
+    font-size: 1.4rem;
+    font-weight: 700;
+    border: none;
+    color: #444;
+    text-shadow: 0 0 1px #fff;
+}
+h4 {
+    margin: 0;
+    padding: 0;
+    font-size: 1rem;
+    font-weight: 100;
+    border: none;
+    color: #444;
+    text-shadow: 0 0 1px #fff;
+    text-align: center;
+}
+input {
+    margin: 0;
+    padding: 0;
+    font-size: 1rem;
+    font-weight: 100;
+    border: none;
+    color: #444;
+    text-shadow: 0 0 1px #fff;
+    text-align: center;
+    width: 100%;
+    font-weight: 700;
+    border-bottom: 1px solid #444;
+    border-left: 1px solid #444;
+    overflow: hidden;
+    background-color: #fff;
+}
+input:first-child {
+    border-left: none;
+}
+input:disabled {
+    color: #444;
+}
+.row {
+    display: flex;
+    width: 580px;
+}
+.row-element {
+    width: 100%;
+    border-bottom: 1px solid #444;
+    border-left: 1px solid #444;
+    overflow: hidden;
+    padding: 0;
+    background-color: #888;
+}
+.row-element:first-child {
+    border-left: none;
+}
+.add-player {
+    font-size: 1.1rem;
+    font-weight: 700;
+    border: none;
+    background-color: rgb(47, 173, 58);
+    color: #fff;
+    text-shadow: none;
+    padding: 10px;
+    transition: background-color 0.1s;
+    border-radius: 3px;
+    margin-top: 10px;
+}
+.add-player:hover {
+    cursor: pointer;
+    background-color: rgb(43, 146, 52);
+    transition: background-color 0.1s;
+}
+.light {
+    color: #fff;
+    text-shadow: none;
+}
+.messages {
+    margin-top: 20px;
+}

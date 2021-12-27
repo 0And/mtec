@@ -1,0 +1,68 @@
+<section class="setup">
+	<mat-card class="setup">
+		<mat-button-toggle-group #gameButtonGroup="matButtonToggleGroup" value="new-game" class="gameGroup">
+			<mat-button-toggle value="new-game" aria-label="New Game">
+				New Game
+			</mat-button-toggle>
+			<mat-button-toggle value="continue-game" aria-label="Continue Game">
+				Continue Game
+			</mat-button-toggle>
+		</mat-button-toggle-group>
+		<div class="new-game" *ngIf="gameButtonGroup.value === 'new-game'">
+			<h3>Players</h3>
+			<div class="pbox">
+				<button mat-icon-button mat-raised-button class="new plr" color="accent" (click)="removePlayer(p['name'])"
+				[ngStyle]="{'background-color': colors[p['color']]}" *ngFor="let p of players; let i = index">
+					{{ p["name"].slice(0, 3) }}
+				</button>
+				<button mat-icon-button mat-raised-button (click)="newPlayer()" class="new" color="accent" *ngIf="players.length < 4">
+					<mat-icon>add</mat-icon>
+				</button>
+			</div>
+
+			<mat-divider></mat-divider>
+
+			<div class="cbox">
+				<mat-button-toggle-group #courseButtonGroup="matButtonToggleGroup" class="courseGroup" vertical="true">
+					<mat-button-toggle (click)="changeCourse(courseButtonGroup.value)" [value]="c['id']" [aria-label]="c['name']" *ngFor="let c of courses; let i = index">
+						<img [src]="c['image']" alt="" />
+						<div [ngClass]="{
+						'overlay': true,
+						'selected': courseButtonGroup.value === c['id']
+						}">
+							<h3>{{c['name']}}</h3>
+						</div>
+					</mat-button-toggle>
+				</mat-button-toggle-group>
+			</div>
+			<div class="tbox">
+				<mat-button-toggle-group #teeButtonGroup="matButtonToggleGroup" class="teeGroup" vertical="true">
+					<mat-button-toggle (click)="changeTee(teeButtonGroup.value)" [value]="t" [aria-label]="t" *ngFor="let t of tees; let i = index">
+						{{ t }}
+					</mat-button-toggle>
+				</mat-button-toggle-group>
+			</div>
+
+			<mat-divider></mat-divider>
+			<div class="main-firebase">
+				<button *ngIf="newSessionId === ''" (click)="startFirebase()" mat-raised-button class="firebase-btn">
+					Use Firebase
+				</button>
+				<h3 class="firebase-code" *ngIf="newSessionId !== ''"> Firebase Session Id: {{ newSessionId }} </h3>
+			</div>
+			<mat-divider></mat-divider>
+			<button (click)="newGame()" class="submit" mat-raised-button color="accent" [disabled]="players.length < 1 || tee == '' || course == ''">
+				Start Game
+			</button>
+		</div>
+		<div class="continue-game" *ngIf="gameButtonGroup.value === 'continue-game'">
+			<mat-form-field class="continue-firebase">
+				<mat-label>Firebase Code</mat-label>
+				<input matInput id="continueFirebaseCode" (keyup)="continueFirebaseChange()"/>
+			</mat-form-field>
+			<button class="submit" (click)="continueGame()" mat-raised-button color="accent" [disabled]="!sessionAvailable">
+				Start Game
+			</button>
+		</div>
+	</mat-card>
+</section>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Menu | Rockey Burger House</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../assets/images/icon.ico">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.2/css/all.css"
+        integrity="sha384-rtJEYb85SiYWgfpCr0jn174XgJTn4rptSOQsMroFBPQSGLdOC5IbubP6lJ35qoM9" crossorigin="anonymous">
+    <script defer src='../js/scripts.js'></script>
+</head>
+
+<body>
+    <main>
+        <nav id='navbar'>
+            <a href="../index.html" class="nav-logo">
+                <img alt="Rockey Burgers" src="../assets/images/rockey-logo.png" />
+            </a>
+            <a class="mobile-hide" href="menu.html">Menu</a>
+            <a class="mobile-hide" href="locations.html">Locations</a>
+            <a class="mobile-hide" href="about.html">About</a>
+            <a class="mobile-hide" href="jobs.html">Jobs</a>
+            <a class="mobile-hide" href="faq.html">FAQ</a>
+            <div class="right mobile-hide">
+                <a href="https://www.twitter.com/keyburgers" target="_blank"><i class="fab fa-twitter-square"></i></a>
+                <a href="https://www.facebook.com/keyburgers" target="_blank"><i class="fab fa-facebook-square"></i></a>
+                <a href="subscribe.html" class="special-button">Subscribe</a>
+            </div>
+            <span class="hamburger-button" onclick="toggleNav()">&#9776;</span>
+        </nav>
+        <section class="hero light-text">
+            <h1>Menu</h1>
+            <hr class="none">
+            <h3>Our burgers are cooked medium and are <span class="bright-text">very juicy!</span></h3>
+        </section>
+        <section class="light-bg dark-text">
+            <div class="inner-content flex-row">
+                <div class="flex-column">
+                    <div class="menu-section">
+                        <h2>Burgers</h2>
+                        <div class="menu-item">
+                            <h3>Rockey Burger $8.25</h3>
+                            <ul>
+                                <li>Two 4 oz. patties, with Awesome Sauce</li>
+                                <li>Add Cheese ... $0.75</li>
+                                <li>Add Bacon ... $1.25</li>
+                            </ul>
+                        </div>
+                        <div class="menu-item">
+                            <h3>Super Burger $5.75</h3>
+                            <ul>
+                                <li>4 oz. patties, with Awesome Sauce</li>
+                                <li>Add Cheese ... $0.50</li>
+                                <li>Add Bacon ... $1.25</li>
+                            </ul>
+                        </div>
+                        <div class="menu-item">
+                            <h3>Toppings Free</h3>
+                            <ul>
+                                <li>Lettuce, Tomato</li>
+                                <li>Red Onions, Grilled Onions</li>
+                                <li>Housemade Pickles, Jalapeños</li>
+                            </ul>
+                        </div>
+                        <div class="menu-item">
+                            <h3>Extra Toppings</h3>
+                            <ul>
+                                <li>Add Avocado ... $1.25</li>
+                                <li>Bacon ... $1.25</li>
+                                <li>Roasted Portabello ... $1.25</li>
+                                <li>Organic Egg ... $1.50</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="menu-section">
+                        <h2>Chicken</h2>
+                        <div class="menu-item">
+                            <h3>Chicken Sandwich $8.00</h3>
+                            <ul>
+                                <li>Add Jack Cheese ... $0.50</li>
+                                <li>Add Bacon ... $1.25</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="menu-section">
+                        <h2>Shakes</h2>
+                        <p>Made with Rockey Creamery organic soft serve</p>
+                        <div class="menu-item">
+                            <h3>Regular $4.75</h3>
+                            <ul>
+                                <li>Vanilla, Chocolate, or Swirled</li>
+                            </ul>
+                        </div>
+                        <div class="menu-item">
+                            <h3>Super Shake $5.75</h3>
+                            <ul>
+                                <li>Cookies & Cream, Fresh Strawberries, or Chocolate & Chips</li>
+                            </ul>
+                        </div>
+                        <div class="menu-item">
+                            <h3>Kids Size $3.25</h3>
+                            <ul>
+                                <li>Vanilla, Chocolate, or Swirled</li>
+                                <li>Add Malt ... $0.50</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex-column">
+                    <div class="menu-section">
+                        <h2>Fries</h2>
+                        <div class="menu-item">
+                            <h3>French Fries $2.75</h3>
+                            <ul>
+                                <li>Delicious freshly peel potatoes fries</li>
+                            </ul>
+                        </div>
+                        <div class="menu-item">
+                            <h3>Garlic Fries $3.50</h3>
+                            <ul>
+                                <li>Delicious freshly peel potatoes fries</li>
+                            </ul>
+                        </div>
+                        <div class="menu-item">
+                            <h3>Add Three Dips $1.50</h3>
+                            <ul>
+                                <li>Super Sauce</li>
+                                <li>Housemade Mayo</li>
+                                <li>Chipotle</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="menu-section">
+                        <h2>Drinks</h2>
+                        <div class="menu-item">
+                            <h3>Fountain $2.50</h3>
+                        </div>
+                        <div class="menu-item">
+                            <h3>Organic Iced Tea $2.75</h3>
+                        </div>
+                        <div class="menu-item">
+                            <h3>Fresh Lemonade $3.25</h3>
+                        </div>
+                        <div class="menu-item">
+                            <h3>Water Bottle $2.00</h3>
+                        </div>
+                    </div>
+                    <div class="menu-section">
+                        <h2>Cones</h2>
+                        <p>Rockey Creamery organic soft serve ice cream</p>
+                        <div class="menu-item">
+                            <h3>Regular $3.75</h3>
+                            <ul>
+                                <li>Vanilla, Chocolate, or Swirled</li>
+                            </ul>
+                        </div>
+                        <div class="menu-item">
+                            <h3>Dipped Cone $4.50</h3>
+                            <ul>
+                                <li>Vanilla ice cream, dipped in chocolate</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="call-to-action grey-bg light-text">
+            <h3>Best Quality Burgers in town. <span class="bright-text">Off the charts.</span></h3>
+            <hr>
+            <a href="../pages/locations.html" class="button">Locations Near You</a>
+        </section>
+        <footer class="light-text">
+            <div>
+                <img alt="Rockey Burgers" src="../assets/images/rockey-logo-light.png" />
+                <p>2019 Rockey Burger House</p>
+            </div>
+            <div>
+                <h3>Company</h3>
+                <a href="../index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="menu.html">Menu</a>
+                <a href="locations.html">Locations</a>
+                <a href="jobs.html">Jobs</a>
+            </div>
+            <div>
+                <h3>Contact</h3>
+                <a href="subscribe.html">Subscribe</a>
+                <a href="faq.html">FAQ</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div>
+                <h3>Social Media</h3>
+                <a href="https://www.twitter.com/keyburgers" target="_blank"><i class="fab fa-twitter-square"></i></a>
+                <a href="https://www.facebook.com/keyburgers" target="_blank"><i class="fab fa-facebook-square"></i></a>
+            </div>
+        </footer>
+    </main>
+</body>
+
+</html>

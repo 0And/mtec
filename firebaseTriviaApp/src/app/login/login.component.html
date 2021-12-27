@@ -1,0 +1,103 @@
+<div id="sign-in-container">
+  <div>
+    <button id="sign-in" mat-stroked-button class="active" (click)="signInOrSignUp(true)">Sign In</button>
+    <button id="sign-up" mat-stroked-button (click)="signInOrSignUp()">Sign Up</button>
+  </div>
+
+  <mat-card id="sign-in-card" *ngIf="isSignIn">
+    <mat-card-title>Sign In</mat-card-title>
+    <mat-card-subtitle>To Start Playing</mat-card-subtitle>
+    <mat-card-content id="sign-in-content">
+      <form [formGroup]="signinForm">
+        <mat-form-field>
+          <mat-label>Enter your Email</mat-label>
+          <input matInput placeholder="email" formControlName="signinEmail" (ngModelChange)="resetSigninError()"
+            required>
+        </mat-form-field>
+
+        <div *ngIf="signinEmail.invalid && (signinEmail.dirty || signinEmail.touched || signinSubmit)">
+          <mat-error *ngIf="signinEmail.errors.required">
+            Email is required
+          </mat-error>
+
+          <mat-error *ngIf="signinEmail.errors.pattern">
+            Email is invalid
+          </mat-error>
+        </div>
+
+        <mat-form-field>
+          <mat-label>Enter your Password</mat-label>
+          <input type="password" matInput placeholder="password" formControlName="signinPassword"
+            (ngModelChange)="resetSigninError()" required>
+        </mat-form-field>
+
+        <mat-error
+          *ngIf="signinPassword.errors?.required && (signinPassword.dirty || signinPassword.touched || signinSubmit)">
+          Password is required
+        </mat-error>
+
+        <mat-error *ngIf="signinError && signinForm.valid">
+          {{ signinError }}
+        </mat-error>
+
+        <div>
+          <button mat-raised-button class="mat-warn" (click)="signin()">Sign In</button>
+        </div>
+      </form>
+
+      <div>OR</div>
+
+      <button id='google' mat-raised-button (click)='signInWithGoogle()'>
+        <fa-icon [icon]='google'></fa-icon>
+        <span>Continue with Google</span>
+      </button>
+
+      <button id='facebook' mat-raised-button (click)='signInWithFacebook()'>
+        <fa-icon [icon]='facebook'></fa-icon>
+        <span>Continue with Facebook</span>
+      </button>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card id="sign-up-card" *ngIf="isSignUp">
+    <mat-card-title>Sign Up</mat-card-title>
+    <mat-card-content id="sign-up-content">
+      <form [formGroup]="signupForm">
+        <mat-form-field>
+          <mat-label>Email</mat-label>
+          <input matInput placeholder="Ex. example@gmail.com" formControlName="signupEmail"
+            (ngModelChange)="resetSignupError()" required>
+        </mat-form-field>
+
+        <div *ngIf="signupEmail.invalid && (signupEmail.dirty || signupEmail.touched || signupSubmit)">
+          <mat-error *ngIf="signupEmail.errors.required">
+            Email is required
+          </mat-error>
+
+          <mat-error *ngIf="signupEmail.errors.pattern">
+            Email is invalid
+          </mat-error>
+        </div>
+
+        <mat-form-field>
+          <mat-label>Password</mat-label>
+          <input type="password" matInput placeholder="Ex. password#@12" formControlName="signupPassword"
+            (ngModelChange)="resetSignupError()" required>
+        </mat-form-field>
+
+        <mat-error
+          *ngIf="signupPassword.errors?.required && (signupPassword.dirty || signupPassword.touched || signupSubmit)">
+          Password is required
+        </mat-error>
+
+        <mat-error *ngIf="signupError && signupForm.valid">
+          {{ signupError }}
+        </mat-error>
+
+        <div>
+          <button mat-raised-button class="mat-warn" (click)="signup()">Create Account</button>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

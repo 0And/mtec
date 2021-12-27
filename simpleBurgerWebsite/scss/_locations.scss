@@ -1,0 +1,24 @@
+@import '_global';
+
+.location-section {
+    color: $black;
+    background-color: $light-grey;
+    margin: 20px;
+    border-radius: $reg-radius;
+    box-shadow: 0px 0px 4px -2px $black;
+    width: calc(50% - 40px);
+    overflow: hidden;
+    border-bottom: 6px solid $salmon;
+    h3 {
+        margin: 20px 20px 0 20px;
+    }
+    ul {
+        margin: 5px 20px 20px 20px;
+        color: $grey;
+    }
+    img {
+        width: 100%;
+        position: relative;
+        bottom: -3px;
+    }
+}

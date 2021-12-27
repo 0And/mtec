@@ -1,0 +1,17 @@
+@import '_global';
+
+.menu-item {
+    text-align: left;
+    margin-top: 20px;
+}
+
+.menu-section {
+    @extend .light-grey-bg;
+    box-shadow: 0px 0px 4px -2px $black;
+    border-left: 6px solid $salmon;
+    margin: 20px;
+    border-radius: $reg-radius;
+    ul {
+        color: $grey;
+    }
+}

@@ -1,0 +1,13 @@
+<h1 matDialogTitle>Choose Who's Playing</h1>
+<mat-card-subtitle *ngIf="nextPlayer">Choose player {{data.amount}}</mat-card-subtitle>
+
+<mat-dialog-content>
+    <mat-card (click)="playerClicked(player, $event)" *ngFor="let player of players" >
+        <img mat-card-avatar [src]="player.photoURL ? player.photoURL : defaultAvatarURL">
+        <mat-card-title>{{ player.displayName ? player.displayName : getDefaultUsername(player.email) }}</mat-card-title>
+    </mat-card>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+    <button mat-raised-button (click)="onCancel()" color="primary">Cancel</button>
+</mat-dialog-actions>

@@ -1,0 +1,225 @@
+@import '_global';
+
+html, body, main {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    font-family: 'Lato';
+}
+nav {
+    background-color: $white;
+    height: 80px;
+    padding: 0 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    .hamburger-button {
+        color: $black;
+        font-size: 30px;
+        cursor: pointer;
+        display: none;
+    }
+    a {
+        text-decoration: none;
+        color: $black;
+        margin: 10px 10px;
+        font-weight: 700;
+        transition: color $transition-time;
+        font-size: 16px;
+    }
+    a:hover {
+        color: $salmon;
+        transition: color $transition-time;
+    }
+    img {
+        height: 42px;
+        transition: transform $transition-time;
+    }
+    img:hover {
+        transform: scale($reg-scale);
+        transition: transform $transition-time;
+    }
+    .nav-logo {
+        margin: 18px 10px;
+    }
+    .special-button {
+        padding: 5px;
+        color: $salmon;
+        border-radius: $reg-radius;
+        border: 2px solid $salmon;
+        background-color: transparent;
+        transition: background-color $transition-time, color $transition-time;
+    }
+    .special-button:hover {
+        background-color: $salmon;
+        color: $white;
+        transition: background-color $transition-time, color $transition-time;
+        }
+    .right {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-left: auto;
+        i {
+            font-size: 24px;
+        }
+        .fa-twitter-square {
+            color: #00aced;
+            transition: transform $transition-time;
+        }
+        .fa-facebook-square {
+            color: #3b5998;
+            transition: transform $transition-time;
+        }
+        .fa-twitter-square:hover {
+            color: #00aced;
+            transform: scale($reg-scale);
+            transition: transform $transition-time;
+        }
+        .fa-facebook-square:hover {
+            color: #3b5998;
+            transform: scale($reg-scale);
+            transition: transform $transition-time;
+        }
+    }
+}
+
+.hero {
+    background-color: $black;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../assets/images/burger-hero.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 80px 0;
+
+    img {
+        max-height: 150px;
+        margin-bottom: 20px;
+        max-width: 80%;
+    }
+    text-align: center;
+    h3 {
+        margin: 0 10%;
+    }
+}
+
+.call-to-action {
+    background-color: $grey;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../assets/images/placeholder/placeholder-square.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 80px 0;
+
+    img {
+        max-height: 150px;
+        margin-bottom: 20px;
+        max-width: 80%;
+    }
+    text-align: center;
+    h3 {
+        margin: 0 10%;
+    }
+}
+
+footer {
+    display: flex;
+    justify-content: space-around;
+    background-color: $grey-black;
+    div {
+        display: flex;
+        flex-direction: column;
+        margin: 40px 0;
+        padding: 20px 0;
+        img {
+            max-width: 150px;
+            margin-bottom: 12px;
+        }
+        p {
+            font-size: 16px;
+            color: $light-grey;
+        }
+        a {
+            font-size: 16px;
+            margin: 4px 0;
+            color: $light-grey;
+            text-decoration: none;
+            transition: color $transition-time;
+            font-weight: normal;
+            width: fit-content;
+        }
+        a:hover {
+            color: $white;
+            transition: color $transition-time;
+        }
+    }
+    i {
+        font-size: 48px;
+        color: $light-grey;
+        transition: color $transition-time;
+    }
+    i:hover {
+        color: $white;
+        transition: color $transition-time;
+    }
+}
+
+iframe {
+    width: 100%;
+}
+
+@media (max-width:768px) {
+    iframe {
+        width: 100%;
+        max-width: 350px;
+    }
+    nav {
+        flex-direction: column;
+        .mobile-hide {
+            visibility: hidden;
+        }
+        .right {
+            margin: 0;
+        }
+        .hamburger-button {
+            position: absolute;
+            display: block;
+            height: 80px;
+            width: 80px;
+            top: 0;
+            left: 0;
+            text-align: center;
+            line-height: 80px;
+        }
+    }
+    footer {
+        padding: 20px 0;
+        flex-direction: column;
+        div, img {
+            text-align: center;
+            border: 0;
+            margin: 0 auto;
+            align-items: center;
+        }
+    }
+}
+
+@import '_locations';
+@import '_menu';
+@import '_about';
+@import '_faq';

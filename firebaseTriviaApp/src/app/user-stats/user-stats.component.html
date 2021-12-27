@@ -1,0 +1,90 @@
+<div>
+  <mat-card *ngIf="player" class="mat-toolbar mat-warn" id="user">
+    <mat-card-title *ngIf="player.email || player.displayName">{{ player.displayName ? player.displayName : getDefaultUsername(player.email) }}</mat-card-title>
+  
+    <mat-card-content class="main">
+      <img [src]="avatar">
+      <mat-list>
+        <mat-list-item *ngIf="player.email">
+          <mat-card-subtitle>
+          {{ player.email }}
+        </mat-card-subtitle>
+        </mat-list-item>
+        <mat-list-item *ngIf="player.phoneNumber">
+          <mat-card-subtitle>{{ player.phoneNumber }}</mat-card-subtitle>
+        </mat-list-item>
+      </mat-list>
+    </mat-card-content>
+  </mat-card>
+  
+  <mat-card *ngIf="player">
+    <mat-card-title>Game Stats</mat-card-title>
+    <mat-card-content>
+     <div class="statRow">
+        <p colspan="2">Total Games Played:</p>
+        <p>{{ player.totalGamesPlayed }}</p>
+      </div>
+      <div class="statRow">
+        <p colspan="2">Games Won:</p>
+        <p>{{ player.totalGamesWon }}</p>
+      </div>
+      <div class="statRow">
+        <p colspan="2">Games Lost:</p>
+        <p>{{ player.totalGamesLost }}</p>
+      </div>
+      <div class="statRow">
+        <p colspan="2">Questions Answered:</p>
+        <p>{{ player.totalQuestionsAnswered }}</p>
+      </div>
+      <div class="statRow">
+        <p colspan="2">Answered Correctly:</p>
+        <p>{{ player.totalQuestionsAnsweredCorrectly }}</p>
+      </div>
+      <div class="statRow">
+        <p colspan="2">Answered Incorrectly:</p>
+        <p>{{ player.totalQuestionsAnsweredIncorrectly }}</p>
+      </div>
+
+      <mat-expansion-panel class="mat-toolbar mat-accent">
+        <mat-expansion-panel-header>
+          <mat-panel-title>Best Category(s):</mat-panel-title>
+        </mat-expansion-panel-header>
+        <ul>
+          <li *ngFor="let category of bestCategories" [innerHTML]="category"></li>
+        </ul>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel class="mat-toolbar mat-warn">
+        <mat-expansion-panel-header>
+          <mat-panel-title>Worst Category(s):</mat-panel-title>
+        </mat-expansion-panel-header>
+        <ul>
+          <li *ngFor="let category of worstCategories" [innerHTML]="category"></li>
+        </ul>
+      </mat-expansion-panel>
+ 
+      <!-- <mat-list>
+        <mat-list-item>Best Category(s):</mat-list-item>
+        <mat-list-item *ngFor="let category of bestCategories; let i = index">
+          <mat-card-subtitle>{{ i + 1 }}. {{ category }}</mat-card-subtitle>
+        </mat-list-item>
+        <mat-list-item>Worst Category(s):</mat-list-item>
+        <mat-list-item *ngFor="let category of worstCategories; let i = index">
+          <mat-card-subtitle>{{ i + 1 }}. {{ category }}</mat-card-subtitle>
+        </mat-list-item>
+      </mat-list> -->
+    </mat-card-content>
+  </mat-card>
+</div>
+
+<button
+  mat-raised-button color="primary"
+  routerLink="/set-up"
+  *ngIf="player"
+>
+  Start New Game
+</button>
+
+<div id="spinner">
+  <mat-spinner *ngIf="!player"></mat-spinner>
+</div>

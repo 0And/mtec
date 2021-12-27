@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Jobs | Rockey Burger House</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../assets/images/icon.ico">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.2/css/all.css" integrity="sha384-rtJEYb85SiYWgfpCr0jn174XgJTn4rptSOQsMroFBPQSGLdOC5IbubP6lJ35qoM9" crossorigin="anonymous">
+    <script defer src='../js/scripts.js'></script>
+</head>
+<body>
+    <main>
+        <nav id='navbar'>
+            <a href="../index.html" class="nav-logo">
+                <img alt="Rockey Burgers" src="../assets/images/rockey-logo.png" />
+            </a>
+            <a class="mobile-hide" href="menu.html">Menu</a>
+            <a class="mobile-hide" href="locations.html">Locations</a>
+            <a class="mobile-hide" href="about.html">About</a>
+            <a class="mobile-hide" href="jobs.html">Jobs</a>
+            <a class="mobile-hide" href="faq.html">FAQ</a>
+            <div class="right mobile-hide">
+                <a href="https://www.twitter.com/keyburgers" target="_blank"><i class="fab fa-twitter-square"></i></a>
+                <a href="https://www.facebook.com/keyburgers" target="_blank"><i class="fab fa-facebook-square"></i></a>
+                <a href="subscribe.html" class="special-button">Subscribe</a>
+            </div>
+            <span class="hamburger-button" onclick="toggleNav()">&#9776;</span>
+        </nav>
+        <section class="hero light-text">
+            <h1>Jobs</h1>
+            <hr class="none">
+            <h3>Join our <span class="bright-text">great team!</span></h3>
+        </section>
+        <section class="light-bg dark-text">
+            <form method="GET">
+                <label for="firstName">First Name</label><br>
+                <input type="text" id="firstName" name="firstName" required><br>
+                <label for="lastName">Last Name</label><br>
+                <input type="text" id="lastName" name="lastName" required><br>
+                <label for="address">Address</label><br>
+                <input type="text" placeholder="Street Address" id="address" name="address" required><br>
+                <input type="text" placeholder="Address Line 2" id="address2" name="address2"><br>
+                <label for="city">City</label><br>
+                <input type="text" id="city" name="city" required><br>
+                <label for="state">State</label><br>
+                <select id="state" name="state" aria-valuenow="UT" required>
+                    <option value="" disabled selected>Select your option</option>
+                    <option value="AL">Alabama</option>
+                    <option value="AK">Alaska</option>
+                    <option value="AZ">Arizona</option>
+                    <option value="AR">Arkansas</option>
+                    <option value="CA">California</option>
+                    <option value="CO">Colorado</option>
+                    <option value="CT">Connecticut</option>
+                    <option value="DE">Delaware</option>
+                    <option value="DC">District Of Columbia</option>
+                    <option value="FL">Florida</option>
+                    <option value="GA">Georgia</option>
+                    <option value="HI">Hawaii</option>
+                    <option value="ID">Idaho</option>
+                    <option value="IL">Illinois</option>
+                    <option value="IN">Indiana</option>
+                    <option value="IA">Iowa</option>
+                    <option value="KS">Kansas</option>
+                    <option value="KY">Kentucky</option>
+                    <option value="LA">Louisiana</option>
+                    <option value="ME">Maine</option>
+                    <option value="MD">Maryland</option>
+                    <option value="MA">Massachusetts</option>
+                    <option value="MI">Michigan</option>
+                    <option value="MN">Minnesota</option>
+                    <option value="MS">Mississippi</option>
+                    <option value="MO">Missouri</option>
+                    <option value="MT">Montana</option>
+                    <option value="NE">Nebraska</option>
+                    <option value="NV">Nevada</option>
+                    <option value="NH">New Hampshire</option>
+                    <option value="NJ">New Jersey</option>
+                    <option value="NM">New Mexico</option>
+                    <option value="NY">New York</option>
+                    <option value="NC">North Carolina</option>
+                    <option value="ND">North Dakota</option>
+                    <option value="OH">Ohio</option>
+                    <option value="OK">Oklahoma</option>
+                    <option value="OR">Oregon</option>
+                    <option value="PA">Pennsylvania</option>
+                    <option value="RI">Rhode Island</option>
+                    <option value="SC">South Carolina</option>
+                    <option value="SD">South Dakota</option>
+                    <option value="TN">Tennessee</option>
+                    <option value="TX">Texas</option>
+                    <option value="UT">Utah</option>
+                    <option value="VT">Vermont</option>
+                    <option value="VA">Virginia</option>
+                    <option value="WA">Washington</option>
+                    <option value="WV">West Virginia</option>
+                    <option value="WI">Wisconsin</option>
+                    <option value="WY">Wyoming</option>
+                </select><br>
+                <label for="zip">Zip Code</label><br>
+                <input type="text" id="zip" name="zip" required><br>
+                <label for="phone">Phone Number</label><br>
+                <input type="text" id="phone" name="phone"><br>
+                <label for="email">Email</label><br>
+                <input type="email" id="email" name="email" required><br>
+                <label for="work1">Work History: Tell us about your last two jobs.</label><br>
+                <label for="work1" class="sub-label">What did you do? Who did you work for? How long were you there?</label><br>
+                <textarea id="work1" name="work1" placeholder="Job 1 information" required></textarea><br>
+                <textarea id="work2" name="work2" placeholder="Job 2 information" required></textarea><br>
+                <label for="availability1">Availability</label><br>
+                <input type="checkbox" name="availability1" value="daytime"> Daytime<br>
+                <input type="checkbox" name="availability2" value="evening"> Evenings<br>
+                <input type="checkbox" name="availability3" value="anytime"> Anytime<br><br>
+                <label for="question1">What makes you a great fit?</label><br>
+                <textarea id="question1" name="question1" required></textarea><br><br>
+                <input type="submit" id="submit" value="Submit">
+            </form>
+        </section>
+        <section class="call-to-action grey-bg light-text">
+            <h3>Best Quality Burgers in town. <span class="bright-text">Off the charts.</span></h3>
+            <hr>
+            <a href="../pages/locations.html" class="button">Locations Near You</a>
+        </section>
+        <footer class="light-text">
+            <div>
+                <img alt="Rockey Burgers" src="../assets/images/rockey-logo-light.png"/>
+                <p>2019 Rockey Burger House</p>
+            </div>
+            <div>
+                <h3>Company</h3>
+                <a href="../index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="menu.html">Menu</a>
+                <a href="locations.html">Locations</a>
+                <a href="jobs.html">Jobs</a>
+            </div>
+            <div>
+                <h3>Contact</h3>
+                <a href="subscribe.html">Subscribe</a>
+                <a href="faq.html">FAQ</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div>
+                <h3>Social Media</h3>
+                <a href="https://www.twitter.com/keyburgers" target="_blank"><i class="fab fa-twitter-square"></i></a>
+                <a href="https://www.facebook.com/keyburgers" target="_blank"><i class="fab fa-facebook-square"></i></a>
+            </div>
+        </footer>
+    </main>
+</body>
+</html>

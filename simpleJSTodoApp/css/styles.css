@@ -1,0 +1,297 @@
+html, body, main {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    user-select: none;
+}
+
+.overlay {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: #222a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    display: none;
+}
+.overlay .modul {
+    width: 500px;
+    max-width: calc(100% - 120px);
+    max-height: calc(100% - 120px);
+    background-color: #dddddd;
+    border-radius: 3px;
+    text-align: center;
+    padding: 30px;
+    overflow-y: auto;
+    scrollbar-color: #999 transparent;
+    scrollbar-width: thin;
+
+    display: none;
+}
+.modul .modulTop {
+    display: flex;
+    text-align: left;
+}
+.modul .modulTop i {
+    font-size: 24px;
+    color: #999;
+    line-height: 40px;
+    margin: 0 8px;
+}
+.modul .modulTop i:hover {
+    color: #777;
+    cursor: pointer;
+}
+.modul h2 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    color: #222222;
+    margin: 8px 0;
+}
+.modul input, .modul textarea, .modul select {
+    border: none;
+    border-radius: 3px;
+    padding: 8px;
+    font-family: inherit;
+    font-size: inherit;
+    background-color: #eeeeee;
+    margin: 0;
+    margin-top: 16px;
+    width: calc(100% - 16px);
+    resize: none;
+}
+.modul select {
+    width: 100%;
+}
+.modul input:disabled, .modul textarea:disabled, .modul select:disabled {
+    background-color: #0000;
+    color: #222222;
+    opacity: 1;
+}
+.modul button {
+    font-size: inherit;
+    border: none;
+    border-radius: 3px;
+    color: #eee;
+    padding: 8px;
+    margin: 0;
+    margin-top: 4px;
+    width: 100%;
+}
+.modul button.add {
+    background-color: #45bc3a;
+    transition: background-color 0.1s;
+}
+.modul button.add:hover {
+    background-color: #39a530;
+    cursor: pointer;
+    transition: background-color 0.1s;
+}
+.modul button.cancel, .modul button.deleteButton {
+    background-color: #c43c48;
+    transition: background-color 0.1s;
+}
+.modul button.cancel:hover, .modul button.deleteButton:hover {
+    background-color: #ba343f;
+    cursor: pointer;
+    transition: background-color 0.1s;
+}
+.modul button.clearTasks {
+    background-color: #d6722a;
+    transition: background-color 0.1s;
+}
+.modul button.clearTasks:hover {
+    background-color: #cc6922;
+    cursor: pointer;
+    transition: background-color 0.1s;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    background-color: #2b8fd5;
+}
+nav button {
+    font-size: 1.4rem;
+    font-weight: 700;
+    padding: 6px 12px;
+    margin: 0;
+    border: 0;
+    border-radius: 3px;
+    background-color: transparent;
+    color: #eeeeee;
+    transition: background-color 0.1s;
+}
+/*
+nav button:hover {
+    cursor: pointer;
+    background-color: #49acf0;
+    transition: background-color 0.1s;
+}
+*/
+
+section.frame {
+    display: flex;
+    padding: 60px;
+    height: calc(100% - 180px);
+    width: calc(100% - 120px);
+    background-color: #eeeeee;
+    overflow-y: hidden;
+    overflow-x: auto;
+    scrollbar-color: #999 transparent;
+    scrollbar-width: thin;
+}
+
+.list {
+    background-color: #dddddd;
+    color: #222;
+    border-radius: 3px;
+    padding: 16px;
+    width: 234px;
+    margin-right: 20px;
+    display: flex;
+    flex-direction: column;
+    flex: none;
+    
+    height: -moz-fit-content;
+    height: -webkit-fit-content;
+    height: -fit-content;
+    max-height: 100%;
+}
+.list h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    width: 100%;
+    margin: 0 8px;
+    padding: 0;
+    color: #222222;
+    overflow: hidden;
+}
+.list-top i {
+    font-size: 24px;
+    color: #999;
+}
+.list-top i:hover {
+    color: #777;
+    cursor: pointer;
+}
+.list-top {
+    display: flex;
+    align-items: center;
+    margin-top: 8px;
+    margin-bottom: 16px;
+}
+.task-list {
+    overflow-x: hidden;
+    padding: 0;
+    scrollbar-color: #999 transparent;
+    scrollbar-width: thin;
+    display: flex;
+    flex-direction: column;
+}
+.task-list .task {
+    padding: 20px;
+    margin-bottom: 8px;
+    font-size: inherit;
+    border-radius: 3px;
+    background-color: #eeeeee;
+    color: #222;
+    text-align: left;
+    cursor: pointer;
+    border-left: 0 #222; /*used to be 5px but it looked ugly since it had no feature with it*/
+    border-top: 0;
+    border-bottom: 0;
+    border-right: 0;
+    border-style: solid;
+    transition: background-color 0.1s;
+}
+.task-list .task:hover {
+    background-color: #f5f5f5;
+    transition: background-color 0.1s;
+}
+.task-list .task .task-labels {
+    display: flex;
+    flex-wrap: wrap;
+}
+.label {
+    background-color: #222222;
+    color: #eeeeee;
+    margin-right: 4px;
+    border-radius: 3px;
+    padding: 2px 6px;
+    font-size: 0.9rem;
+    margin-bottom: 4px;
+}
+.task-list .task .task-text {
+    word-wrap: break-word;
+}
+.task-list .addTask {
+    padding: 10px;
+    margin: 0;
+    font-size: inherit;
+    border-radius: 3px;
+    background-color: transparent;
+    color: #222;
+    text-align: left;
+    cursor: pointer;
+    transition: background-color 0.1s;
+}
+.task-list .addTask:hover {
+    background-color: #eeeeee;
+    transition: background-color 0.1s;
+}
+
+.addList {
+    background-color: #dddddd;
+    color: #222;
+    border-radius: 3px;
+    height: 50px;
+    width: 234px;
+    line-height: 50px;
+    padding-left: 16px;
+    transition: background-color 0.1s;
+    flex: none;
+    border: none;
+    font-size: inherit;
+    text-align: left;
+}
+.addList:hover {
+    background-color: #d3d3d3;
+    cursor: pointer;
+    transition: background-color 0.1s;
+}
+.Incomplete {
+    background-color: #c43c48;
+}
+.In-progress {
+    background-color: #d6722a;
+}
+.Complete {
+    background-color: #45bc3a;
+}
+
+@media (max-width:768px) {
+    section.frame {
+        display: flex;
+        flex-direction: column;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+    .addList {
+        width: 100%;
+    }
+    .list {
+        width: calc(100% - 34px);
+        margin-bottom: 40px;
+    }
+}

@@ -1,0 +1,291 @@
+@font-face {
+    font-family: 'Lato';
+    src: url('../assets/fonts/Lato-Regular.ttf');
+}
+@font-face {
+    font-family: 'BoldLato';
+    src: url('../assets/fonts/Lato-Bold.ttf');
+}
+
+
+$light-salmon: #F5EEEE;
+$salmon: #F05054;
+$hover-salmon: rgb(212, 71, 74);
+$dark-salmon: #84282A;
+$white: #FFFFFF;
+$light-grey: #EEEEEE;
+$grey: #4c4848;
+$black: #221414;
+$grey-black: #222020;
+
+$reg-radius: 3px;
+$transition-time: 0.1s;
+$reg-scale: 1.1;
+
+$max-width-size: 80rem;
+
+h1,h2,h3,h4,h5,h6,p {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-family: 'BoldLato';
+    font-size: 56px;
+    font-weight: 900;
+}
+h2 {
+    font-family: 'BoldLato';
+    font-size: 32px;
+    font-weight: 900;
+}
+h3 {
+    font-size: 24px;
+    font-weight: 900;
+}
+h4 {
+    font-size: 20px;
+    font-style: italic;
+}
+p, li {
+    font-size: 18px;
+    list-style-type: none;
+}
+ul {
+    margin: 5px 0 0 5px;
+    padding: 0;
+}
+hr {
+    width: 50%;
+    border: 1px solid $white;
+    margin: 40px 0;
+}
+hr.none {
+    width: 100%;
+    border: none;
+    margin: 5px;
+}
+
+
+a {
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    color: $salmon;
+    transition: color $transition-time;
+}
+a:hover {
+    color: $hover-salmon;
+    transition: color $transition-time;
+}
+
+a.button {
+    text-decoration: none;
+    font-family: 'Lato';
+    background-color: $salmon;
+    border: none;
+    padding: 20px;
+    font-size: 16px;
+    font-weight: 900;
+    color: $white;
+    border-radius: $reg-radius;
+    // box-shadow: 0 0 20px $black;
+    transition: background-color $transition-time, box-shadow $transition-time;
+}
+a.button:hover {
+    background-color: $hover-salmon;
+    cursor: pointer;
+    // box-shadow: 0 0 10px $black;
+    transition: background-color $transition-time, box-shadow $transition-time;
+}
+button {
+    font-family: 'Lato';
+    background-color: $salmon;
+    border: none;
+    padding: 20px;
+    font-size: 16px;
+    font-weight: 900;
+    color: $white;
+    border-radius: $reg-radius;
+    transition: background-color $transition-time;
+}
+button:hover {
+    background-color: $hover-salmon;
+    transition: background-color $transition-time;
+    cursor: pointer;
+}
+button:active, input[type="button"]:active {
+    outline: none;
+}
+%bg {
+    padding: 20px;
+}
+.light-bg {
+    background-color: $white;
+    @extend %bg;
+}
+.dark-bg {
+    background-color: $grey-black;
+    @extend %bg;
+}
+.light-grey-bg {
+    background-color: $light-grey;
+    @extend %bg;
+}
+.light-salmon-bg {
+    background-color: $light-salmon;
+    @extend %bg;
+}
+.grey-bg {
+    background-color: $grey;
+    @extend %bg;
+}
+.bright-bg {
+    background-color: $salmon;
+    @extend %bg;
+}
+.inner-content {
+    margin: 0 auto;
+    max-width: $max-width-size;
+    width: 100%;
+}
+.flex-grid {
+    display: flex;
+    flex-wrap: wrap;
+}
+.flex-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    /*
+    > p, > div {
+        padding: 0 20px;
+    }
+    */
+}
+.flex-column {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    text-align: center;
+}
+.label-title {
+    display: flex;
+    flex-direction: column;
+    width: calc(100% - 40px);
+    text-align: center;
+    margin: 20px;
+    hr {
+        border: 1px solid $black;
+        margin: 40px auto;
+        margin-bottom: 20px;
+    }
+    h3, p {
+        width: 100%;
+    }
+}
+.flex-center {
+    align-items: center;
+    justify-content: center;
+}
+.light-text {
+    color: $white;
+}
+.dark-text {
+    color: $black;
+}
+.grey-text {
+    color: $grey;
+}
+.bright-text {
+    color: $salmon;
+    font-weight: 900;
+}
+
+.large-text {
+    font-size: 18px;
+    line-height: 36px;
+    padding: 0 40px;
+}
+.large-text-left {
+    font-size: 18px;
+    line-height: 36px;
+    margin-left: 40px;
+}
+.large-text-right {
+    font-size: 18px;
+    line-height: 36px;
+    margin-right: 40px;
+}
+
+.large-img {
+    width: 350px;
+}
+
+form {
+    width: 50%;
+    margin: 20px auto;
+    background-color: $light-grey;
+    padding: 20px;
+
+    border-radius: $reg-radius;
+    box-shadow: 0px 0px 4px -2px $black;
+    border-bottom: 6px solid $salmon;
+
+    input[type="text"], input[type="email"], textarea, select {
+        border-radius: $reg-radius;
+        padding: 5px;
+        border: none;
+        margin-bottom: 3px;
+        width: 100%;
+    }
+
+    input[type="submit"] {
+        text-decoration: none;
+        background-color: $salmon;
+        border: none;
+        padding: 10px;
+        font-size: 16px;
+        //font-weight: 900;
+        color: $white;
+        border-radius: $reg-radius;
+        width: 100%;
+        transition: background-color $transition-time, box-shadow $transition-time;
+    }
+    input[type="submit"]:hover {
+
+        background-color: $hover-salmon;
+        cursor: pointer;
+        transition: background-color $transition-time, box-shadow $transition-time;
+    }
+    .sub-label {
+        color: $grey;
+        font-size: 14px;
+        font-style: italic;
+    }
+}
+
+@media (max-width: 768px) {
+    .large-text {
+        padding: 20px;
+    }
+    .large-text-left, .large-text-right {
+        margin: 20px;
+    }
+    .large-img {
+        width: 100%;
+        max-width: 350px;
+    }
+    .flex-row {
+        flex-direction: column;
+        .flex-column {
+            width: auto;
+        }
+    }
+    .flex-grid > div {
+        width: 100%;
+    }
+    form {
+        width: 80%;
+    }
+}

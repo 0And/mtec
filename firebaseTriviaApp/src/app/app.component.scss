@@ -1,0 +1,27 @@
+#toolbar-row {
+  display: flex;
+  justify-content: space-between;
+  #routes {
+    display: flex;
+    justify-content: space-between;
+    width: auto;
+    button {
+      margin: 0 5px;
+    }
+  }
+}
+
+#avatar {
+  height: 40px;
+  width: 40px;
+  margin-right: 5px;
+  border-radius: 4px;
+}
+
+#message {
+  padding-left: 0;
+}
+
+h1 {
+  cursor: pointer;
+}

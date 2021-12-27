@@ -1,0 +1,17 @@
+<form (ngSubmit)="submitDialog()" [formGroup]="playerForm">
+	<mat-form-field>
+		<mat-label>Nickname</mat-label>
+		<input matInput formControlName="nickname" value="playerData.nickname" required (ngModelChange)="nicknameChange($event)"/>
+	</mat-form-field>
+
+	<mat-form-field>
+		<mat-label>Color</mat-label>
+		<mat-select required formControlName="color">
+			<mat-option *ngFor="let color of colors" [value]="color">
+				{{ color }}
+			</mat-option>
+		</mat-select>
+	</mat-form-field>
+
+	<button mat-raised-button type="submit" color="accent" [disabled]="playerForm.invalid">Submit</button>
+</form>
