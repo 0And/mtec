@@ -1,5 +1,7 @@
 # This project is deployed on firebaseapp.com: [trivia-43e20](https://trivia-43e20.firebaseapp.com)
 
+Main branch is located here at one of my team member's github repository: [bliechty/trivia](https://github.com/bliechty/trivia)
+
 ---
 
 # Trivia
